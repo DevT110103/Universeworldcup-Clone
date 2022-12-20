@@ -1,0 +1,67 @@
+.banner {
+  .wrapper-banner {
+    height: 870px;
+    .wrapper-caption {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      left: 50%;
+      top: 0;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      padding: 0 15px;
+      padding-top: 85px;
+      z-index: 2;
+      .caption {
+        font-family: $font-primary;
+        font-size: 5.5rem;
+        line-height: 130%;
+        font-weight: 400;
+        color: $white-color;
+        text-transform: uppercase;
+        padding: 23px 0;
+      }
+      .logo-banner {
+        margin-top: 66px;
+        margin-left: 312px;
+        animation: spin 15s linear infinite;
+      }
+    }
+    .wrapper-hero {
+      position: relative;
+      z-index: -1;
+      .wrapper-hero img {
+        position: absolute;
+      }
+      .background-hero-1 {
+        width: 31.11111111111111%;
+        transform: translate(175%, -125%);
+      }
+      .background-hero-2 {
+        width: 12.56944444444444%;
+        transform: translate(210%, -500%);
+      }
+      .hero-1 {
+        width: 27.56944444444444%;
+        --transformX: 100%;
+        --transformY: -120%;
+        animation: upDown 10s linear infinite;
+      }
+      .hero-2 {
+        --transformX: 135%;
+        --transformY: -215%;
+        width: 37.22222%;
+        animation: upDown 15s linear infinite;
+      }
+    }
+    .background-banner {
+      position: relative;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -170%);
+      z-index: -99;
+      animation: slowHiden 10s linear infinite;
+    }
+  }
+}

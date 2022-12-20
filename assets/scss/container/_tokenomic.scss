@@ -1,0 +1,125 @@
+.tokenomic {
+  margin-bottom: 238px;
+  .wrapper-tokenomic {
+    .wrapper-title {
+      margin-bottom: 45px;
+      .title {
+        font-family: 'Monument Extended';
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 132%;
+        text-transform: uppercase;
+      }
+      .sub-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 30px;
+        color: $gray-sub-title-color;
+        width: 596px;
+        max-width: 100%;
+      }
+    }
+    .wrapper-content {
+      .wrapper-content-inner {
+        .wrapper-logo {
+          display: flex;
+          align-items: center;
+          margin-bottom: 34px;
+          .logo {
+            display: block;
+            margin-right: 21px;
+          }
+          .sub-logo {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 150%;
+            color: $gray-sub-title-color;
+            span {
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 125%;
+              color: $white-color;
+            }
+          }
+        }
+        .wrapper-highlight-text {
+          position: relative;
+          text-transform: unset;
+          margin-left: 30px;
+          .percent-text {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 10px;
+          }
+          .sub-percent-text {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 130%;
+            width: 340px;
+          }
+
+          &.wrapper-highlight-text--white::after {
+            background-color: $highlight-color-smoke;
+          }
+          &.wrapper-highlight-text--pink-dark::after {
+            background-color: $highlight-color-pink-dark;
+          }
+          &.wrapper-highlight-text--pink::after {
+            background-color: $highlight-color-pink;
+          }
+          &.wrapper-highlight-text--green::after {
+            background-color: $highlight-color-green;
+          }
+          &.wrapper-highlight-text--green-dark::after {
+            background-color: $highlight-color-green-dark;
+          }
+          &.wrapper-highlight-text--pupper::after {
+            background-color: $highlight-color-pupper;
+          }
+          &.wrapper-highlight-text--yellow::after {
+            background-color: $highlight-color-yellow;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 10px;
+            height: 100%;
+            left: -22px;
+          }
+          + .wrapper-highlight-text {
+            margin-top: 40px;
+          }
+        }
+        + .wrapper-content-inner {
+          margin-left: 37px;
+        }
+        .time-out {
+          margin-top: 76px;
+          font-family: 'Montserrat';
+          font-weight: 400;
+          font-size: 19px;
+          line-height: 130%;
+
+          width: 384px;
+        }
+      }
+    }
+  }
+  .wrapper-image-chart {
+    position: relative;
+    .logo-1 {
+      animation: spin 10s linear infinite;
+      max-width: 100%;
+      width: 374px;
+    }
+    .wrapper-cup {
+      position: absolute;
+      top: 5px;
+      z-index: -1;
+      left: 4px;
+    }
+  }
+}

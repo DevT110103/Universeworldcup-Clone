@@ -1,0 +1,61 @@
+.collect {
+  margin-bottom: 220px;
+  .collect-wrapper {
+    position: relative;
+    .collect-title {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-size: 8rem;
+      font-weight: 400;
+      font-family: $font-primary;
+      line-height: 130%;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px #fff;
+    }
+    .collect-card {
+      position: absolute;
+      &.collect-card--1 {
+        transform: translate(340%, -115%);
+
+        --transformX: 340%;
+        --transformY: -125%;
+        animation: upDown 7s infinite linear;
+        animation-delay: 1s;
+        z-index: -1;
+      }
+
+      &.collect-card--2 {
+        transform: translate(50%, 5%);
+
+        --transformX: 50%;
+        --transformY: 5%;
+        animation: upDown 7s infinite linear;
+        animation-delay: 0.75s;
+        z-index: -1;
+      }
+
+      &.collect-card--3 {
+        --transformX: 390%;
+        --transformY: 5%;
+        animation: upDown 7s infinite linear;
+        animation-delay: 0.5s;
+        transform: translate(390%, 5%);
+        z-index: -1;
+      }
+    }
+    .collect-asset {
+      --transformX: 180%;
+      --transformY: -35%;
+      animation: upDown 10s infinite linear;
+      z-index: -2;
+    }
+
+    .collect-bottom-asset {
+      transform: translate(25%, 25%);
+      animation: slowHiden 10s infinite linear;
+    }
+  }
+}

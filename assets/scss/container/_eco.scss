@@ -1,0 +1,70 @@
+.eco {
+  margin-bottom: 372px;
+  .wrapper-heading {
+    margin-bottom: 131px;
+    .heading {
+      text-transform: uppercase;
+      font-family: $font-primary;
+      font-size: 5.5rem;
+      font-weight: 400;
+      line-height: 132%;
+    }
+    .sub-heading {
+      max-width: 596px;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 167%;
+      color: $gray-sub-title-color;
+    }
+  }
+  .wrapper-logo-eco {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 135px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .logo-eco {
+      width: 196px;
+    }
+    .background-logo-eco {
+      width: 242px;
+      animation: spin 10s linear infinite;
+      top: -120px;
+      left: 480px;
+      z-index: -1;
+    }
+  }
+  .wrapper-ntf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .wrapper-action {
+      display: flex;
+      margin-bottom: 30px;
+      .logo-action {
+        width: 78px;
+        margin-right: 23px;
+      }
+      .title-action {
+        padding: 24.5px 0;
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 132%;
+        max-width: 192px;
+        border-bottom: 1px solid $gray-color;
+        margin-bottom: 16px;
+      }
+      .sub-title-action {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $gray-sub-title-color;
+        max-width: 333px;
+      }
+    }
+  }
+}

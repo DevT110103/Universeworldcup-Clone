@@ -1,0 +1,37 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes upDown {
+  0%,
+  100% {
+    transform: translate(var(--transformX), var(--transformY));
+  }
+  50% {
+    transform: translate(var(--transformX), calc(var(--transformY) + 10px));
+  }
+}
+
+@keyframes slowHiden {
+  0%,
+  100% {
+    opacity: 70%;
+  }
+  50% {
+    opacity: 100%;
+  }
+}
+
+@keyframes runner {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -10000000px;
+  }
+}

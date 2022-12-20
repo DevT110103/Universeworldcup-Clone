@@ -1,0 +1,134 @@
+.football-star {
+  .wrapper-football-star {
+    .wrapper-info {
+      .title {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        font-weight: 700;
+        color: $white-color;
+        opacity: 0.5;
+      }
+      .amount {
+        font-family: $font-primary;
+        font-size: 4.8rem;
+        font-weight: 400;
+        line-height: 132%;
+        text-transform: uppercase;
+        margin: 25px 0;
+        &.amount--blue {
+          color: #00fff0;
+        }
+        &.amount--green {
+          color: #adff00;
+        }
+      }
+      .role {
+        font-family: $font-primary;
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 132%;
+        text-transform: uppercase;
+        text-align: center;
+        color: $black-color;
+        width: 130px;
+        min-height: 33px;
+        margin: 19px 0 72px 0;
+        background-color: #ff442b;
+        cursor: default;
+      }
+      .age {
+        font-family: $font-primary;
+        font-size: 3.2rem;
+        font-weight: 400;
+        line-height: 132%;
+        text-transform: uppercase;
+        margin: 19px 0 72px 0;
+      }
+      .wrapper-numeral {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 17px;
+        .numeral {
+          display: flex;
+          align-items: center;
+          padding-right: 80px;
+          .percent {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.9rem;
+          }
+          .progress {
+            margin: 0 8px;
+            width: $percent-bar;
+            height: 7px;
+            background-color: $white-color;
+            border-radius: 8px;
+            background-color: $blue-color;
+          }
+          .progress-bar {
+            text-align: left;
+            height: 7px;
+            border-radius: 8px;
+            background-color: $white-color;
+            &.progress-bar--power {
+              width: calc($percent-bar * calc(27 / 100));
+            }
+            &.progress-bar--agility {
+              width: calc($percent-bar * calc(6 / 100));
+            }
+            &.progress-bar--skill {
+              width: calc($percent-bar * calc(70 / 100));
+            }
+          }
+        }
+      }
+    }
+  }
+  .skin-star {
+    display: block;
+    transform: translateX(-30%);
+  }
+  .wrapper-desc {
+    margin-left: 100px;
+    .wrapper-title {
+      margin-bottom: 50px;
+      .title {
+        width: 524px;
+        font-family: $font-primary;
+        font-size: 4.8rem;
+        font-weight: 400;
+        line-height: 132%;
+        text-transform: uppercase;
+      }
+      .sub-title {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 167%;
+        color: $gray-sub-title-color;
+        max-width: 489px;
+      }
+    }
+    .wrapper-store {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 450px;
+      border-bottom: 1px solid $gray-color;
+      color: $white-color;
+      .question {
+        font-family: $font-second;
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 132%;
+        padding: 24.5px 0;
+      }
+      .arrow {
+        font-size: 4rem;
+      }
+    }
+    .wrapper-store + .wrapper-store {
+      margin-top: 15px;
+    }
+  }
+}

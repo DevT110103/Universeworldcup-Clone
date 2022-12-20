@@ -1,0 +1,43 @@
+body {
+  color: $white-color;
+  background-color: $black-color;
+}
+
+.wrapper-highlight {
+  position: relative;
+  &-text {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 100%;
+      left: -16px;
+      top: 0;
+      border-radius: 26.5px;
+      background-color: transparent;
+    }
+  }
+
+  &.wrapper-highlight--blue > .wrapper-highlight-text::after {
+    background-color: $blue-color;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: $white-color;
+  cursor: pointer;
+  &.btn--primary {
+    background-color: $blue-color;
+  }
+}

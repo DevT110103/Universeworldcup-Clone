@@ -1,0 +1,53 @@
+.footer {
+  .portgress {
+    border-top: 1px solid #8c8c8c;
+    margin-bottom: 54px;
+  }
+  .wrapper-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    .wrapper-left {
+      .logo-footer {
+        margin-bottom: 40px;
+      }
+      .pargr {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 167%;
+        width: 441px;
+        max-width: 100%;
+      }
+    }
+    .wrapper-nav-footer {
+      margin: auto;
+      .title {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 167%;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 16px;
+      }
+      .link-nav {
+        display: block;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 188%;
+        margin-bottom: 16px;
+
+        text-transform: uppercase;
+        color: $white-color;
+      }
+    }
+  }
+  .coppy-right {
+    margin-top: 62px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 219%;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

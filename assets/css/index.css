@@ -1,0 +1,984 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 125%;
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a[href] {
+  text-decoration: none;
+}
+
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/assets/fonts/MonumentExtended-Regular.otf");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat-Regular.otf");
+}
+@font-face {
+  font-family: "Montserrat-Thin";
+  src: url("/assets/fonts/Montserrat-Thin.otf");
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes upDown {
+  0%, 100% {
+    -webkit-transform: translate(var(--transformX), var(--transformY));
+            transform: translate(var(--transformX), var(--transformY));
+  }
+  50% {
+    -webkit-transform: translate(var(--transformX), calc(var(--transformY) + 10px));
+            transform: translate(var(--transformX), calc(var(--transformY) + 10px));
+  }
+}
+@keyframes upDown {
+  0%, 100% {
+    -webkit-transform: translate(var(--transformX), var(--transformY));
+            transform: translate(var(--transformX), var(--transformY));
+  }
+  50% {
+    -webkit-transform: translate(var(--transformX), calc(var(--transformY) + 10px));
+            transform: translate(var(--transformX), calc(var(--transformY) + 10px));
+  }
+}
+@-webkit-keyframes slowHiden {
+  0%, 100% {
+    opacity: 70%;
+  }
+  50% {
+    opacity: 100%;
+  }
+}
+@keyframes slowHiden {
+  0%, 100% {
+    opacity: 70%;
+  }
+  50% {
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes runner {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -10000000px;
+  }
+}
+@keyframes runner {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -10000000px;
+  }
+}
+body {
+  color: #fff;
+  background-color: #000;
+}
+
+.wrapper-highlight {
+  position: relative;
+}
+.wrapper-highlight-text {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.wrapper-highlight-text::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 100%;
+  left: -16px;
+  top: 0;
+  border-radius: 26.5px;
+  background-color: transparent;
+}
+.wrapper-highlight.wrapper-highlight--blue > .wrapper-highlight-text::after {
+  background-color: #0147ff;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.btn.btn--primary {
+  background-color: #0147ff;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 85px;
+}
+.header .wrapper-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .wrapper-nav .logo-header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.header .wrapper-nav .menu {
+  width: 569px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header .wrapper-nav .menu-item-link {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 82%;
+  text-transform: uppercase;
+  color: #a9a9a9;
+}
+
+.social {
+  position: fixed;
+  padding-left: 10px;
+  z-index: 999999;
+}
+.social-item {
+  width: 37px;
+  height: 37px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.social-item .social-link {
+  color: #000;
+  display: block;
+  text-align: center;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.banner .wrapper-banner {
+  height: 870px;
+}
+.banner .wrapper-banner .wrapper-caption {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 0 15px;
+  padding-top: 85px;
+  z-index: 2;
+}
+.banner .wrapper-banner .wrapper-caption .caption {
+  font-family: "Monument Extended";
+  font-size: 5.5rem;
+  line-height: 130%;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 23px 0;
+}
+.banner .wrapper-banner .wrapper-caption .logo-banner {
+  margin-top: 66px;
+  margin-left: 312px;
+  -webkit-animation: spin 15s linear infinite;
+          animation: spin 15s linear infinite;
+}
+.banner .wrapper-banner .wrapper-hero {
+  position: relative;
+  z-index: -1;
+}
+.banner .wrapper-banner .wrapper-hero .wrapper-hero img {
+  position: absolute;
+}
+.banner .wrapper-banner .wrapper-hero .background-hero-1 {
+  width: 31.1111111111%;
+  -webkit-transform: translate(175%, -125%);
+          transform: translate(175%, -125%);
+}
+.banner .wrapper-banner .wrapper-hero .background-hero-2 {
+  width: 12.5694444444%;
+  -webkit-transform: translate(210%, -500%);
+          transform: translate(210%, -500%);
+}
+.banner .wrapper-banner .wrapper-hero .hero-1 {
+  width: 27.5694444444%;
+  --transformX: 100%;
+  --transformY: -120%;
+  -webkit-animation: upDown 10s linear infinite;
+          animation: upDown 10s linear infinite;
+}
+.banner .wrapper-banner .wrapper-hero .hero-2 {
+  --transformX: 135%;
+  --transformY: -215%;
+  width: 37.22222%;
+  -webkit-animation: upDown 15s linear infinite;
+          animation: upDown 15s linear infinite;
+}
+.banner .wrapper-banner .background-banner {
+  position: relative;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -170%);
+          transform: translate(-50%, -170%);
+  z-index: -99;
+  -webkit-animation: slowHiden 10s linear infinite;
+          animation: slowHiden 10s linear infinite;
+}
+
+.eco {
+  margin-bottom: 372px;
+}
+.eco .wrapper-heading {
+  margin-bottom: 131px;
+}
+.eco .wrapper-heading .heading {
+  text-transform: uppercase;
+  font-family: "Monument Extended";
+  font-size: 5.5rem;
+  font-weight: 400;
+  line-height: 132%;
+}
+.eco .wrapper-heading .sub-heading {
+  max-width: 596px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 167%;
+  color: #929292;
+}
+.eco .wrapper-logo-eco {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 135px;
+}
+.eco .wrapper-logo-eco img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.eco .wrapper-logo-eco .logo-eco {
+  width: 196px;
+}
+.eco .wrapper-logo-eco .background-logo-eco {
+  width: 242px;
+  -webkit-animation: spin 10s linear infinite;
+          animation: spin 10s linear infinite;
+  top: -120px;
+  left: 480px;
+  z-index: -1;
+}
+.eco .wrapper-ntf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.eco .wrapper-ntf .wrapper-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+}
+.eco .wrapper-ntf .wrapper-action .logo-action {
+  width: 78px;
+  margin-right: 23px;
+}
+.eco .wrapper-ntf .wrapper-action .title-action {
+  padding: 24.5px 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 132%;
+  max-width: 192px;
+  border-bottom: 1px solid #a9a9a9;
+  margin-bottom: 16px;
+}
+.eco .wrapper-ntf .wrapper-action .sub-title-action {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #929292;
+  max-width: 333px;
+}
+
+.collect {
+  margin-bottom: 220px;
+}
+.collect .collect-wrapper {
+  position: relative;
+}
+.collect .collect-wrapper .collect-title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 400;
+  font-family: "Monument Extended";
+  line-height: 130%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+.collect .collect-wrapper .collect-card {
+  position: absolute;
+}
+.collect .collect-wrapper .collect-card.collect-card--1 {
+  -webkit-transform: translate(340%, -115%);
+          transform: translate(340%, -115%);
+  --transformX: 340%;
+  --transformY: -125%;
+  -webkit-animation: upDown 7s infinite linear;
+          animation: upDown 7s infinite linear;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  z-index: -1;
+}
+.collect .collect-wrapper .collect-card.collect-card--2 {
+  -webkit-transform: translate(50%, 5%);
+          transform: translate(50%, 5%);
+  --transformX: 50%;
+  --transformY: 5%;
+  -webkit-animation: upDown 7s infinite linear;
+          animation: upDown 7s infinite linear;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+  z-index: -1;
+}
+.collect .collect-wrapper .collect-card.collect-card--3 {
+  --transformX: 390%;
+  --transformY: 5%;
+  -webkit-animation: upDown 7s infinite linear;
+          animation: upDown 7s infinite linear;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-transform: translate(390%, 5%);
+          transform: translate(390%, 5%);
+  z-index: -1;
+}
+.collect .collect-wrapper .collect-asset {
+  --transformX: 180%;
+  --transformY: -35%;
+  -webkit-animation: upDown 10s infinite linear;
+          animation: upDown 10s infinite linear;
+  z-index: -2;
+}
+.collect .collect-wrapper .collect-bottom-asset {
+  -webkit-transform: translate(25%, 25%);
+          transform: translate(25%, 25%);
+  -webkit-animation: slowHiden 10s infinite linear;
+          animation: slowHiden 10s infinite linear;
+}
+
+.national {
+  margin-bottom: 62px;
+}
+.national .wrapper-national .wrapper-trend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 92px;
+}
+.national .wrapper-national .wrapper-trend .wrapper-text-national {
+  max-width: 691px;
+}
+.national .wrapper-national .wrapper-trend .wrapper-text-national .title-national {
+  font-size: 4.8rem;
+  font-weight: 400;
+  font-family: "Monument Extended";
+  line-height: 132%;
+  text-transform: uppercase;
+}
+.national .wrapper-national .wrapper-trend .wrapper-text-national .sub-title-national {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 167%;
+  color: #929292;
+}
+.national .wrapper-national .wrapper-trend:nth-child(2) > .wrapper-text-national {
+  margin-left: 140px;
+}
+.national .wrapper-national .wrapper-image-national {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.football-star .wrapper-football-star .wrapper-info .title {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.5;
+}
+.football-star .wrapper-football-star .wrapper-info .amount {
+  font-family: "Monument Extended";
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 132%;
+  text-transform: uppercase;
+  margin: 25px 0;
+}
+.football-star .wrapper-football-star .wrapper-info .amount.amount--blue {
+  color: #00fff0;
+}
+.football-star .wrapper-football-star .wrapper-info .amount.amount--green {
+  color: #adff00;
+}
+.football-star .wrapper-football-star .wrapper-info .role {
+  font-family: "Monument Extended";
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 132%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  width: 130px;
+  min-height: 33px;
+  margin: 19px 0 72px 0;
+  background-color: #ff442b;
+  cursor: default;
+}
+.football-star .wrapper-football-star .wrapper-info .age {
+  font-family: "Monument Extended";
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 132%;
+  text-transform: uppercase;
+  margin: 19px 0 72px 0;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 17px;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 80px;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral .percent {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral .progress {
+  margin: 0 8px;
+  width: 122px;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 8px;
+  background-color: #0147ff;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral .progress-bar {
+  text-align: left;
+  height: 7px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral .progress-bar.progress-bar--power {
+  width: 32.94px;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral .progress-bar.progress-bar--agility {
+  width: 7.32px;
+}
+.football-star .wrapper-football-star .wrapper-info .wrapper-numeral .numeral .progress-bar.progress-bar--skill {
+  width: 85.4px;
+}
+.football-star .skin-star {
+  display: block;
+  -webkit-transform: translateX(-30%);
+          transform: translateX(-30%);
+}
+.football-star .wrapper-desc {
+  margin-left: 100px;
+}
+.football-star .wrapper-desc .wrapper-title {
+  margin-bottom: 50px;
+}
+.football-star .wrapper-desc .wrapper-title .title {
+  width: 524px;
+  font-family: "Monument Extended";
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 132%;
+  text-transform: uppercase;
+}
+.football-star .wrapper-desc .wrapper-title .sub-title {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 167%;
+  color: #929292;
+  max-width: 489px;
+}
+.football-star .wrapper-desc .wrapper-store {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 450px;
+  border-bottom: 1px solid #a9a9a9;
+  color: #fff;
+}
+.football-star .wrapper-desc .wrapper-store .question {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 132%;
+  padding: 24.5px 0;
+}
+.football-star .wrapper-desc .wrapper-store .arrow {
+  font-size: 4rem;
+}
+.football-star .wrapper-desc .wrapper-store + .wrapper-store {
+  margin-top: 15px;
+}
+
+.flag {
+  margin-bottom: 338px;
+}
+
+.tokenomic {
+  margin-bottom: 238px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-title {
+  margin-bottom: 45px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-title .title {
+  font-family: "Monument Extended";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 132%;
+  text-transform: uppercase;
+}
+.tokenomic .wrapper-tokenomic .wrapper-title .sub-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #929292;
+  width: 596px;
+  max-width: 100%;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 34px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-logo .logo {
+  display: block;
+  margin-right: 21px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-logo .sub-logo {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #929292;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-logo .sub-logo span {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #fff;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text {
+  position: relative;
+  text-transform: unset;
+  margin-left: 30px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text .percent-text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text .sub-percent-text {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 130%;
+  width: 340px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--white::after {
+  background-color: #def9ff;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--pink-dark::after {
+  background-color: #cb20e2;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--pink::after {
+  background-color: #f398f1;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--green::after {
+  background-color: #02ff90;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--green-dark::after {
+  background-color: #019722;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--pupper::after {
+  background-color: #4821ff;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text.wrapper-highlight-text--yellow::after {
+  background-color: #e6ff01;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  left: -22px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .wrapper-highlight-text + .wrapper-highlight-text {
+  margin-top: 40px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner + .wrapper-content-inner {
+  margin-left: 37px;
+}
+.tokenomic .wrapper-tokenomic .wrapper-content .wrapper-content-inner .time-out {
+  margin-top: 76px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 130%;
+  width: 384px;
+}
+.tokenomic .wrapper-image-chart {
+  position: relative;
+}
+.tokenomic .wrapper-image-chart .logo-1 {
+  -webkit-animation: spin 10s linear infinite;
+          animation: spin 10s linear infinite;
+  max-width: 100%;
+  width: 374px;
+}
+.tokenomic .wrapper-image-chart .wrapper-cup {
+  position: absolute;
+  top: 5px;
+  z-index: -1;
+  left: 4px;
+}
+
+.partners {
+  margin-bottom: 240px;
+}
+.partners .wrapper-partners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.partners .wrapper-partners .wrapper-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 80px;
+}
+.partners .wrapper-partners .wrapper-title .title {
+  font-family: "Monument Extended";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 132%;
+  text-transform: uppercase;
+}
+.partners .wrapper-partners .wrapper-title .sub-title {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 130%;
+  color: #929292;
+  text-align: center;
+  width: 623px;
+  max-width: 100%;
+}
+.partners .wrapper-partners .wrapper-partents-item {
+  position: relative;
+  left: 5%;
+}
+.partners .wrapper-partners .wrapper-partents-item .logo-partents {
+  margin-right: 50px;
+}
+.partners .wrapper-partners .wrapper-partents-item + .wrapper-partents-item {
+  margin-left: 60px;
+  margin-top: 52px;
+}
+
+.roadmap {
+  margin-bottom: 131px;
+}
+.roadmap .wrapper-roadmap .wrapper-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 67px;
+  text-align: center;
+}
+.roadmap .wrapper-roadmap .wrapper-title .title {
+  font-family: "Monument Extended";
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 132%;
+  text-transform: uppercase;
+}
+.roadmap .wrapper-roadmap .wrapper-title .sub-title {
+  font-family: "Montserrat-Thin";
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 130%;
+  width: 632px;
+  max-width: 100%;
+}
+.roadmap .wrapper-roadmap .wrapper-roadmap-item {
+  margin-top: 67px;
+}
+.roadmap .wrapper-roadmap .wrapper-roadmap-item .wrapper-highlight-text {
+  font-weight: 400;
+}
+.roadmap .wrapper-roadmap .wrapper-roadmap-item .descript-roadmap {
+  margin-top: 16px;
+  font-family: "Montserrat-Thin";
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 130%;
+  width: 359px;
+  max-width: 100%;
+}
+
+.join-team {
+  margin-bottom: 97px;
+}
+.join-team .back-gr-bottom {
+  position: relative;
+}
+.join-team .back-gr-bottom .glass {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+}
+.join-team .back-gr-bottom .wrapper-link-join {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.join-team .back-gr-bottom .wrapper-link-join .join-btn {
+  padding: 9px 45px;
+  background-color: #000;
+  border-radius: 10px;
+  font-family: "Monument Extended";
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.003em;
+  cursor: pointer;
+  color: #fff;
+}
+.join-team .back-gr-bottom .wrapper-link-join .descript-join {
+  margin-left: 40px;
+  font-family: "Monument Extended";
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 132%;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.footer .portgress {
+  border-top: 1px solid #8c8c8c;
+  margin-bottom: 54px;
+}
+.footer .wrapper-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40px;
+}
+.footer .wrapper-footer .wrapper-left .logo-footer {
+  margin-bottom: 40px;
+}
+.footer .wrapper-footer .wrapper-left .pargr {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 167%;
+  width: 441px;
+  max-width: 100%;
+}
+.footer .wrapper-footer .wrapper-nav-footer {
+  margin: auto;
+}
+.footer .wrapper-footer .wrapper-nav-footer .title {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 167%;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+}
+.footer .wrapper-footer .wrapper-nav-footer .link-nav {
+  display: block;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 188%;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.footer .coppy-right {
+  margin-top: 62px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 219%;
+  color: rgba(255, 255, 255, 0.5);
+}/*# sourceMappingURL=index.css.map */
